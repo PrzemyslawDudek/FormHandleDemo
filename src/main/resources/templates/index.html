@@ -6,7 +6,17 @@
 </head>
 <body>
 
-  <section class="request_param_section">
+<section class="path_variable_section">
+    <h3>Request Param Example</h3>
+    <p th:if="${path_variable_response != null}" th:text="${path_variable_response}"></p>
+    <form action="/path_variable/example/value_in_path_variable" method="get">
+      <input type="submit" value="Submit">
+    </form>
+</section>
+
+<hr>
+
+<section class="request_param_section">
 
     <h3>Request Param Example</h3>
 
@@ -15,11 +25,11 @@
     <p th:if="${request_param_get_method_response != null}" th:text="${request_param_get_method_response}"></p>
 
     <form action="/request_param/form_get_method" method="get">
-      <label for="user_name_id">User Name</label>
-      <input id="user_name_id" type="text" name="user_name" placeholder="User name">
-      <label for="user_surname_id">User Surname</label>
-      <input id="user_surname_id" type="text" name="user_surname" placeholder="User surname">
-      <input type="submit" value="Submit">
+        <label for="user_name_id">User Name</label>
+        <input id="user_name_id" type="text" name="user_name" placeholder="User name">
+        <label for="user_surname_id">User Surname</label>
+        <input id="user_surname_id" type="text" name="user_surname" placeholder="User surname">
+        <input type="submit" value="Submit">
     </form>
 
     <hr>
@@ -29,14 +39,16 @@
     <p th:if="${request_param_post_method_response != null}" th:text="${request_param_post_method_response}"></p>
 
     <form action="/request_param/form_post_method" method="post">
-      <label for="car_brand_id">User Name</label>
-      <input id="car_brand_id" type="text" name="car_brand" placeholder="Car Brand">
-      <label for="car_model_id">User Surname</label>
-      <input id="car_model_id" type="text" name="car_model" placeholder="Car Model">
-      <input type="submit" value="Submit">
+        <label for="car_brand_id">User Name</label>
+        <input id="car_brand_id" type="text" name="car_brand" placeholder="Car Brand">
+        <label for="car_model_id">User Surname</label>
+        <input id="car_model_id" type="text" name="car_model" placeholder="Car Model">
+        <input type="submit" value="Submit">
     </form>
 
-  </section>
+</section>
+
+<hr>
 
 </body>
 </html>
