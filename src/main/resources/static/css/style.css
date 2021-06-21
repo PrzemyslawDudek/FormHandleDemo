@@ -1,0 +1,24 @@
+.hidden {
+    display: none;
+}
+
+.email_info {
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid grey;
+}
+
+.email_form {
+    width: 100%;
+    padding: 5px;
+    margin: 10px;
+    display: grid;
+    grid-template-columns:
+            [col_1_start] 80px
+            [col_1_end col_2_start] 200px
+            [col_2_end col_3_start] 20px
+            [col_3_end col_4_start] 60px
+            [col_4_end];
+    gap: 10px;
+    align-items: center;
+}

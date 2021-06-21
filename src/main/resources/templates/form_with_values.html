@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Form With Values</title>
+
+    <link rel="stylesheet" href="../static/css/normalize.css" th:href="@{/css/normalize.css}">
+    <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<section class="form_example">
+
+  <div class="email_info" th:each="email : ${emails}" th:text="${email}">Email</div>
+
+  <div class="form_with_values" th:each="email : ${emails}">
+
+    <form th:action="@{/model_attribute_with_values/process}" action="#" class="email_form" method="post" th:object="${emailDto}">
+
+      <label class="hidden" for="edit_address_id">address id</label>
+      <input type="hidden" id="edit_address_id" th:value="${email.id}" th:field="*{id}">
+
+      <label class="hidden" for="edit_email_label">edit email label</label>
+      <input type="text" id="edit_email_label" th:placeholder="label" th:value="${email.label}" name="label" th:field="*{label}">
+
+      <label class="hidden" for="edit_email">edit email</label>
+      <input type="text" id="edit_email" th:placeholder="email" th:value="${email.email}" name="email" th:field="*{email}">
+
+      <label class="hidden" for="edit_active">is active</label>
+      <input type="checkbox" id="edit_active" th:value="${email.active}" name="active" th:field="*{active}">
+
+      <input type="submit" value="save">
+    </form>
+
+  </div>
+
+</section>
+
+</body>
+</html>
