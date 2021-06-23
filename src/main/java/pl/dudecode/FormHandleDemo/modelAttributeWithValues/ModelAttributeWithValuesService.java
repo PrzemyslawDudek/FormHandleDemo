@@ -20,8 +20,11 @@ public class ModelAttributeWithValuesService {
         }
         return dbEmailSet;
     }
-    private final static Set<Email> dbEmailSet = initDbEmailSet();
+    private final Set<Email> dbEmailSet;
 
+    public ModelAttributeWithValuesService() {
+        dbEmailSet = initDbEmailSet();
+    }
 
     public Set<Email> findAllEmails() {
         return dbEmailSet;
