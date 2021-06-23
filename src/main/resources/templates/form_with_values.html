@@ -27,7 +27,7 @@
       <input type="text" id="edit_email" th:placeholder="email" th:value="${email.email}" name="email" th:name="email">
 
       <label class="hidden" for="edit_active">is active</label>
-      <input type="checkbox" id="edit_active" th:checked = "${email.active}" name="active" th:name="active">
+      <input type="checkbox" id="edit_active" th:checked="${email.active}" name="active" th:name="active">
 
       <input type="submit" value="save">
     </form>
