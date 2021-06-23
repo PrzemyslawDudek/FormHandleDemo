@@ -18,17 +18,15 @@ public class ModelAttributeWithValuesController {
     }
 
     @GetMapping("/")
-    String modelAttributeWithValues(Model model) {
+    public String modelAttributeWithValues(Model model) {
         model.addAttribute("emails", modelAttributeWithValuesService.findAllEmails());
-        model.addAttribute("emailDto", new EmailDTO());
+        model.addAttribute("email", new Email());
         return "form_with_values";
     }
 
-
     @PostMapping("/process")
-    String modelAttributeWithValuesProcess(@ModelAttribute("emailDto") EmailDTO emailDTO) {
-        Email email = modelAttributeWithValuesService.editEmail(emailDTO);
-        System.out.println("LOG: Edit email: " + email);
+    public String modelAttributeWithValuesProcess(@ModelAttribute("email") Email email) {
+        System.out.println("LOG: Edit email: " + modelAttributeWithValuesService.editEmail(email));
         return "redirect:/model_attribute_with_values/";
     }
 }

@@ -16,7 +16,7 @@
     <div class="form_with_values" th:each="email : ${emails}">
 
         <form th:action="@{/model_attribute_with_values/process}" action="#" class="email_form" method="post"
-              th:object="${emailDto}">
+              th:object="${email}">
 
             <label class="hidden" for="edit_address_id">address id</label>
             <input type="hidden" id="edit_address_id" th:value="${email.id}" th:name="id" name="id">

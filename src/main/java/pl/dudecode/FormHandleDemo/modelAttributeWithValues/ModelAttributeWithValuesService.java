@@ -30,14 +30,14 @@ public class ModelAttributeWithValuesService {
         return dbEmailSet;
     }
 
-    public Email editEmail(EmailDTO emailDTO) {
-        Email email = findEmailById(emailDTO.getId());
-        if (email != null) {
-            email.setLabel(emailDTO.getLabel());
-            email.setEmail(emailDTO.getEmail());
-            email.setActive(emailDTO.isActive());
+    public Email editEmail(Email email) {
+        Email editedEmail = findEmailById(email.getId());
+        if (editedEmail != null) {
+            editedEmail.setLabel(email.getLabel());
+            editedEmail.setEmail(email.getEmail());
+            editedEmail.setActive(email.isActive());
         }
-        return email;
+        return editedEmail;
     }
 
     private Email findEmailById(long id) {
