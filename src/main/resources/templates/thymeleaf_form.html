@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thymeleaf Form</title>
+
+    <link rel="stylesheet" href="../static/css/normalize.css" th:href="@{/css/normalize.css}">
+    <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}">
+</head>
+<body>
+
+    <div>
+        <form action="#" th:action="@{/thymeleaf_form/process_form}" method="post" th:object="${thymeleafForm}">
+            <label for ="name">Name</label>
+            <input type="text" id="name" th:field="*{name}">
+            <label for ="active">Active</label>
+            <input type="checkbox" id="active" th:field="*{active}">
+            <input type="submit" value="submit">
+        </form>
+    </div>
+
+</body>
+</html>
