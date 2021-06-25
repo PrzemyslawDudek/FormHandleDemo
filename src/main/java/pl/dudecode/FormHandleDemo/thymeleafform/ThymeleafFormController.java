@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("thymeleaf_form/")
 public class ThymeleafFormController {
 
-    private final static ThymeLeafForm thymeleafForm = new ThymeLeafForm();
+    private final static ThymeleafForm thymeleafForm = new ThymeleafForm();
 
     @GetMapping("/")
     public String getForm(Model model) {
@@ -20,7 +20,7 @@ public class ThymeleafFormController {
     }
 
     @PostMapping("process_form")
-    public String processForm(@ModelAttribute("thymeleafForm") ThymeLeafForm thymeleafForm) {
+    public String processForm(@ModelAttribute("thymeleafForm") ThymeleafForm thymeleafForm) {
         ThymeleafFormController.thymeleafForm.setName(thymeleafForm.getName());
         ThymeleafFormController.thymeleafForm.setActive(thymeleafForm.isActive());
         return "redirect:/thymeleaf_form/";
