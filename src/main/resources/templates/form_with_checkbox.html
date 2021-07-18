@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Form With Checkbox</title>
+</head>
+<body>
+
+    <div th:if="${response} != null" th:text="${response}">FORM</div>
+
+    <form action="#" th:action="@{/form_with_checkbox/process_model_form}"  method="post" th:object="${formWithCheckbox}">
+        <label for="checkbox">checkbox</label>
+        <input id="checkbox" type="checkbox" name="checkbox" th:field="*{checkbox}">
+
+        <input type="submit" value="send">
+    </form>
+
+    <form action="#" th:action="@{/form_with_checkbox/process_request_param_form}"  method="post">
+        <label for="checkbox_param">checkbox</label>
+        <input id="checkbox_param" type="checkbox" name="checkbox" th:checked="${formWithCheckbox.isCheckbox()}">
+
+        <input type="submit" value="send">
+    </form>
+
+    <form action="#" th:action="@{/form_with_checkbox/process_model_form_with_values}"  method="post" th:object="${formWithCheckbox}">
+        <label for="checkbox_value">checkbox</label>
+        <input id="checkbox_value" type="checkbox" name="checkbox" th:value="${formWithCheckbox.isCheckbox()}" th:checked="${formWithCheckbox.isCheckbox()}" th:field="*{checkbox}">
+
+        <input type="submit" value="send">
+    </form>
+
+</body>
+</html>
